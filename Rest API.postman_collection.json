@@ -1,0 +1,1222 @@
+{
+	"info": {
+		"_postman_id": "2462d794-6ebc-4020-a0ab-76d2968b08de",
+		"name": "Rest API Tutorial - laravel",
+		"description": "Build REST API with Laravel 8 using JWT Token\r\n\r\nIn this tutorial we will learn how to Build REST API with Laravel 8 using JWT Token (Json Web Token) from scratch. I’m sure after this topic you will be able to create a Rest API.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2125335"
+	},
+	"item": [
+		{
+			"name": "Register New User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Joy\",\r\n    \"email\": \"joy123@example.com\",\r\n    \"password\": \"123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server-laravel}}/api/register",
+					"host": [
+						"{{server-laravel}}"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register New User",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nancy\",\r\n    \"email\": \"nancy@example.com\",\r\n    \"password\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://lvtest.avdemosites.com/api/register",
+							"protocol": "https",
+							"host": [
+								"lvtest",
+								"avdemosites",
+								"com"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "lvtest.avdemosites.com"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Sep 2020 11:46:58 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Sep 2020 11:46:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"User created successfully\",\n    \"data\": {\n        \"name\": \"Nancy\",\n        \"email\": \"nancy@example.com\",\n        \"updated_at\": \"2020-09-17T11:46:58.000000Z\",\n        \"created_at\": \"2020-09-17T11:46:58.000000Z\",\n        \"id\": 3\n    }\n}"
+				},
+				{
+					"name": "Register New User",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Joy\",\r\n    \"email\": \"joy123@example.com\",\r\n    \"password\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://lvtest.avdemosites.com/api/register",
+							"protocol": "https",
+							"host": [
+								"lvtest",
+								"avdemosites",
+								"com"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx-rc"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 21 Sep 2020 12:44:50 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "private, must-revalidate"
+						},
+						{
+							"key": "pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "expires",
+							"value": "-1"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"User created successfully\",\n    \"data\": {\n        \"name\": \"Joy\",\n        \"email\": \"joy123@example.com\",\n        \"updated_at\": \"2020-09-21 12:44:50\",\n        \"created_at\": \"2020-09-21 12:44:50\",\n        \"id\": 3\n    }\n}"
+				},
+				{
+					"name": "Register New User",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Joy\",\r\n    \"email\": \"joy@example.com\",\r\n    \"password\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://lvtest.avdemosites.com/api/register",
+							"protocol": "https",
+							"host": [
+								"lvtest",
+								"avdemosites",
+								"com"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx-rc"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 21 Sep 2020 12:19:43 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "private, must-revalidate"
+						},
+						{
+							"key": "pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "expires",
+							"value": "-1"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"User created successfully\",\n    \"data\": {\n        \"name\": \"Joy\",\n        \"email\": \"joy@example.com\",\n        \"updated_at\": \"2020-09-21 12:19:43\",\n        \"created_at\": \"2020-09-21 12:19:43\",\n        \"id\": 2\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"joy123@example.com\",\r\n    \"password\": \"123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server-laravel}}/api/login",
+					"host": [
+						"{{server-laravel}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"nancy@example.com\",\r\n    \"password\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://lvtest.avdemosites.com/api/login",
+							"protocol": "https",
+							"host": [
+								"lvtest",
+								"avdemosites",
+								"com"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "lvtest.avdemosites.com"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Sep 2020 11:51:06 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Sep 2020 11:51:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYwMDM0MzQ2NiwiZXhwIjoxNjAwMzQ3MDY2LCJuYmYiOjE2MDAzNDM0NjYsImp0aSI6ImRMZjlVU0xSMHBZTTdZSGgiLCJzdWIiOjMsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.seklvI3XxfkesfndNhozACHpwmLqdjMpeUzIryeZ20I\"\n}"
+				},
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"joy@example.com\",\r\n    \"password\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://lvtest.avdemosites.com/api/login",
+							"protocol": "https",
+							"host": [
+								"lvtest",
+								"avdemosites",
+								"com"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx-rc"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 21 Sep 2020 12:24:38 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "private, must-revalidate"
+						},
+						{
+							"key": "pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "expires",
+							"value": "-1"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbHZ0ZXN0LmF2ZGVtb3NpdGVzLmNvbVwvYXBpXC9sb2dpbiIsImlhdCI6MTYwMDY5MTA3OCwiZXhwIjoxNjAwNjk0Njc4LCJuYmYiOjE2MDA2OTEwNzgsImp0aSI6Ik5XVm5XdjdjanE2NlJmanIiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.PJbyNcd-s3nG1mnu5z3mjlHM77snLpl05w720k5mZCE\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "5|YgfyIKP01DWI6MjosAf7beSDKZ28lJlBFTY5BwqPb42b64df",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbHZ0ZXN0LmF2ZGVtb3NpdGVzLmNvbVwvYXBpXC9sb2dpbiIsImlhdCI6MTYwMDY5MTA3OCwiZXhwIjoxNjAwNjk0Njc4LCJuYmYiOjE2MDA2OTEwNzgsImp0aSI6Ik5XVm5XdjdjanE2NlJmanIiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.PJbyNcd-s3nG1mnu5z3mjlHM77snLpl05w720k5mZCE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server-laravel}}/api/products",
+					"host": [
+						"{{server-laravel}}"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				},
+				"description": "Get all products"
+			},
+			"response": [
+				{
+					"name": "Products",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbHZ0ZXN0LmF2ZGVtb3NpdGVzLmNvbVwvYXBpXC9sb2dpbiIsImlhdCI6MTYwMDY5MTA3OCwiZXhwIjoxNjAwNjk0Njc4LCJuYmYiOjE2MDA2OTEwNzgsImp0aSI6Ik5XVm5XdjdjanE2NlJmanIiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.PJbyNcd-s3nG1mnu5z3mjlHM77snLpl05w720k5mZCE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://lvtest.avdemosites.com/api/products",
+							"protocol": "https",
+							"host": [
+								"lvtest",
+								"avdemosites",
+								"com"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx-rc"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 21 Sep 2020 12:29:11 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Vary",
+							"value": "Authorization"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "private, must-revalidate"
+						},
+						{
+							"key": "pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "expires",
+							"value": "-1"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"user_id\": 2,\n        \"name\": \"Test-2\",\n        \"sku\": \"test-2\",\n        \"price\": 1000,\n        \"quantity\": 50,\n        \"created_at\": \"2020-09-21 12:28:18\",\n        \"updated_at\": \"2020-09-21 12:28:18\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Create Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "5|YgfyIKP01DWI6MjosAf7beSDKZ28lJlBFTY5BwqPb42b64df",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbHZ0ZXN0LmF2ZGVtb3NpdGVzLmNvbVwvYXBpXC9sb2dpbiIsImlhdCI6MTYwMDY5MTA3OCwiZXhwIjoxNjAwNjk0Njc4LCJuYmYiOjE2MDA2OTEwNzgsImp0aSI6Ik5XVm5XdjdjanE2NlJmanIiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.PJbyNcd-s3nG1mnu5z3mjlHM77snLpl05w720k5mZCE"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Test-2\",\r\n    \"detail\": \"asdrf\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server-laravel}}/api/products",
+					"host": [
+						"{{server-laravel}}"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				},
+				"description": "Get all products"
+			},
+			"response": [
+				{
+					"name": "Create Product",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbHZ0ZXN0LmF2ZGVtb3NpdGVzLmNvbVwvYXBpXC9sb2dpbiIsImlhdCI6MTYwMDY5MTA3OCwiZXhwIjoxNjAwNjk0Njc4LCJuYmYiOjE2MDA2OTEwNzgsImp0aSI6Ik5XVm5XdjdjanE2NlJmanIiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.PJbyNcd-s3nG1mnu5z3mjlHM77snLpl05w720k5mZCE"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Test-2\",\r\n    \"sku\":\"test-2\",\r\n    \"price\":1000,\r\n    \"quantity\":50\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://lvtest.avdemosites.com/api/create",
+							"protocol": "https",
+							"host": [
+								"lvtest",
+								"avdemosites",
+								"com"
+							],
+							"path": [
+								"api",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx-rc"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 21 Sep 2020 12:28:18 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Vary",
+							"value": "Authorization"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "private, must-revalidate"
+						},
+						{
+							"key": "pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "expires",
+							"value": "-1"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Product created successfully\",\n    \"data\": {\n        \"name\": \"Test-2\",\n        \"sku\": \"test-2\",\n        \"price\": 1000,\n        \"quantity\": 50,\n        \"user_id\": 2,\n        \"updated_at\": \"2020-09-21 12:28:18\",\n        \"created_at\": \"2020-09-21 12:28:18\",\n        \"id\": 2\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "5|YgfyIKP01DWI6MjosAf7beSDKZ28lJlBFTY5BwqPb42b64df",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbHZ0ZXN0LmF2ZGVtb3NpdGVzLmNvbVwvYXBpXC9sb2dpbiIsImlhdCI6MTYwMDY5MTA3OCwiZXhwIjoxNjAwNjk0Njc4LCJuYmYiOjE2MDA2OTEwNzgsImp0aSI6Ik5XVm5XdjdjanE2NlJmanIiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.PJbyNcd-s3nG1mnu5z3mjlHM77snLpl05w720k5mZCE"
+					}
+				],
+				"url": {
+					"raw": "{{server-laravel}}/api/products/1",
+					"host": [
+						"{{server-laravel}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				},
+				"description": "Get all products"
+			},
+			"response": [
+				{
+					"name": "Get Product",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbHZ0ZXN0LmF2ZGVtb3NpdGVzLmNvbVwvYXBpXC9sb2dpbiIsImlhdCI6MTYwMDY5MTA3OCwiZXhwIjoxNjAwNjk0Njc4LCJuYmYiOjE2MDA2OTEwNzgsImp0aSI6Ik5XVm5XdjdjanE2NlJmanIiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.PJbyNcd-s3nG1mnu5z3mjlHM77snLpl05w720k5mZCE"
+							}
+						],
+						"url": {
+							"raw": "https://lvtest.avdemosites.com/api/products/2",
+							"protocol": "https",
+							"host": [
+								"lvtest",
+								"avdemosites",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx-rc"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 21 Sep 2020 12:30:57 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Vary",
+							"value": "Authorization"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "private, must-revalidate"
+						},
+						{
+							"key": "pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "expires",
+							"value": "-1"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"user_id\": 2,\n    \"name\": \"Test-2\",\n    \"sku\": \"test-2\",\n    \"price\": 1000,\n    \"quantity\": 50,\n    \"created_at\": \"2020-09-21 12:28:18\",\n    \"updated_at\": \"2020-09-21 12:28:18\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "5|YgfyIKP01DWI6MjosAf7beSDKZ28lJlBFTY5BwqPb42b64df",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbHZ0ZXN0LmF2ZGVtb3NpdGVzLmNvbVwvYXBpXC9sb2dpbiIsImlhdCI6MTYwMDY5MTA3OCwiZXhwIjoxNjAwNjk0Njc4LCJuYmYiOjE2MDA2OTEwNzgsImp0aSI6Ik5XVm5XdjdjanE2NlJmanIiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.PJbyNcd-s3nG1mnu5z3mjlHM77snLpl05w720k5mZCE"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Test-22\",\r\n    \"detail\": \"asdr222f\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server-laravel}}/api/products/2",
+					"host": [
+						"{{server-laravel}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"2"
+					]
+				},
+				"description": "Get all products"
+			},
+			"response": [
+				{
+					"name": "Update Product",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbHZ0ZXN0LmF2ZGVtb3NpdGVzLmNvbVwvYXBpXC9sb2dpbiIsImlhdCI6MTYwMDY5MTA3OCwiZXhwIjoxNjAwNjk0Njc4LCJuYmYiOjE2MDA2OTEwNzgsImp0aSI6Ik5XVm5XdjdjanE2NlJmanIiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.PJbyNcd-s3nG1mnu5z3mjlHM77snLpl05w720k5mZCE"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Test-22\",\r\n    \"sku\":\"test-2\",\r\n    \"price\":1000,\r\n    \"quantity\":50\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://lvtest.avdemosites.com/api/update/2",
+							"protocol": "https",
+							"host": [
+								"lvtest",
+								"avdemosites",
+								"com"
+							],
+							"path": [
+								"api",
+								"update",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx-rc"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 21 Sep 2020 12:32:53 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Vary",
+							"value": "Authorization"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "private, must-revalidate"
+						},
+						{
+							"key": "pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "expires",
+							"value": "-1"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Product updated successfully\",\n    \"data\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "5|YgfyIKP01DWI6MjosAf7beSDKZ28lJlBFTY5BwqPb42b64df",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbHZ0ZXN0LmF2ZGVtb3NpdGVzLmNvbVwvYXBpXC9sb2dpbiIsImlhdCI6MTYwMDY5MTA3OCwiZXhwIjoxNjAwNjk0Njc4LCJuYmYiOjE2MDA2OTEwNzgsImp0aSI6Ik5XVm5XdjdjanE2NlJmanIiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.PJbyNcd-s3nG1mnu5z3mjlHM77snLpl05w720k5mZCE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server-laravel}}/api/products/1",
+					"host": [
+						"{{server-laravel}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Product",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbHZ0ZXN0LmF2ZGVtb3NpdGVzLmNvbVwvYXBpXC9sb2dpbiIsImlhdCI6MTYwMDY5MTA3OCwiZXhwIjoxNjAwNjk0Njc4LCJuYmYiOjE2MDA2OTEwNzgsImp0aSI6Ik5XVm5XdjdjanE2NlJmanIiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.PJbyNcd-s3nG1mnu5z3mjlHM77snLpl05w720k5mZCE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://lvtest.avdemosites.com/api/delete/2",
+							"protocol": "https",
+							"host": [
+								"lvtest",
+								"avdemosites",
+								"com"
+							],
+							"path": [
+								"api",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx-rc"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 21 Sep 2020 12:36:57 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Vary",
+							"value": "Authorization"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "private, must-revalidate"
+						},
+						{
+							"key": "pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "expires",
+							"value": "-1"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Product deleted successfully\"\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "server-laravel",
+			"value": "http://localhost"
+		}
+	]
+}
