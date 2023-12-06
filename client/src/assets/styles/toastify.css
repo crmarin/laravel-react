@@ -1,0 +1,19 @@
+.Toastify__toast-container--top-right {
+  top: 10em !important;
+}
+
+.Toastify__toast {
+  height: 80px !important;
+}
+
+:root {
+  --toastify-color-progress-light: linear-gradient(
+    to right,
+    #4cd964,
+    #5ac8fa,
+    #007aff,
+    #34aadc,
+    #5856d6,
+    #ff2d55
+  );
+}

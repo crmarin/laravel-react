@@ -40,27 +40,21 @@ services:
       networks:
           - laravel
 
-  # artisan:
-  #     build:
-  #         context: .
-  #         dockerfile: php.dockerfile
-  #     container_name: artisan
-  #     volumes:
-  #         - ./src:/var/www/html
-  #     working_dir: /var/www/html
-  #     entrypoint: ['php', 'artisan']
-  #     networks:
-  #         - laravel
+  react:
+    build:
+      context: .
+      dockerfile: node.dockerfile
+    container_name: react
+    ports:
+      - 3000:3000
+    volumes:
+      - ./client:/usr/src/app
+    command: yarn run dev
+    depends_on:
+      - php
+    networks:
+      - laravel
 
-  # npm:
-  #     image: node:current-alpine
-  #     container_name: npm
-  #     volumes:
-  #         - ./src:/var/www/html
-  #     working_dir: /var/www/html
-  #     entrypoint: ['npm']
-  #     networks:
-  #         - laravel
 volumes:
   db-data:
 
