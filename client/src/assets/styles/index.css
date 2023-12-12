@@ -59,32 +59,20 @@
   @apply mx-1 h-auto rounded-2xl px-3 py-2 text-xs normal-case shadow outline-none transition-all duration-150 ease-linear hover:shadow-md focus:outline-none;
 }
 
-.button-delete {
+.button-red {
   @apply base-generic-button bg-red-500 text-white hover:bg-red-700 active:bg-red-600;
 }
 
-.button-tertiary {
+.button-fucsia {
   @apply base-generic-button bg-fuchsia-500 text-white hover:bg-fuchsia-700 active:bg-fuchsia-600;
 }
 
-.button-update {
+.button-indigo {
   @apply base-generic-button bg-indigo-500 text-white hover:bg-indigo-700 active:bg-indigo-600;
 }
 
-.button-cancel {
+.button-blue {
   @apply base-generic-button bg-blue-500 text-white hover:bg-blue-700 active:bg-blue-600;
-}
-
-.button-pre {
-  @apply button-cancel;
-}
-
-.button-post {
-  @apply button-update;
-}
-
-.toggle {
-  @apply relative block h-6 w-12 rounded-full p-1 before:absolute before:left-1 before:h-4 before:w-4 before:rounded-full before:bg-white before:p-1 before:transition-all before:duration-200 peer-checked:before:left-7 peer-checked:before:bg-white;
 }
 
 /* ******** */
@@ -93,18 +81,4 @@
 
 .label-text {
   @apply mb-2 block text-xs text-gray-800;
-}
-
-/* ******** */
-/* basic generic label */
-/* ******** */
-
-.continuos-selected {
-  --tw-ring-color: #2563eb;
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0
-    calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-}
-
-.react-datepicker-wrapper {
-  width: 100%;
 }

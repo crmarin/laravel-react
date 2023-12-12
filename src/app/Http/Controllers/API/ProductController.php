@@ -18,7 +18,7 @@ class ProductController extends BaseController
      */
     public function index(): JsonResponse
     {
-        $products = Product::all();
+        $products = Product::all()->sortBy('id');
 
         return $this->sendResponse(ProductResource::collection($products), 'Products retrieved successfully.');
     }
