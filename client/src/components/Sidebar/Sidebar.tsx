@@ -1,20 +1,7 @@
 
 /*eslint-disable*/
-import { shallow } from "zustand/shallow";
-import { useUserStore } from "@/store/useUserStore";
 
 export default function Sidebar({ showSidebar, setShowSidebar }) {
-
-  const { logout } = useUserStore(
-    (state) => ({
-      logout: state.logout,
-    }),
-    shallow
-  );
-
-  const onLogoutClick = () => {
-    logout();
-  };
 
   return (
     <nav className="relative z-10 flex flex-wrap items-center justify-between bg-white px-6 py-4 shadow-xl lg:fixed lg:bottom-0 lg:left-0 lg:top-0 lg:block lg:w-72 lg:flex-row lg:flex-nowrap lg:overflow-hidden lg:overflow-y-auto">
@@ -66,16 +53,6 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
             {/* Navigation */}
 
             <ul className="flex list-none flex-col lg:min-w-full lg:flex-col">
-              <li>
-                <a
-                  onClick={() => onLogoutClick()}
-                  href="#!"
-                  className="block py-3 text-base text-indigo-600 hover:text-blue-600"
-                >
-                  {" "}
-                  Cerrar Sesión
-                </a>
-              </li>
               {/* Navigation */}
               <hr className="my-4 lg:min-w-full" />
             </ul>

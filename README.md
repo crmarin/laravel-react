@@ -9,10 +9,11 @@ docker compose up
 ### Credentialas
 
 ```
-DB_PORT=5432
-DB_DATABASE=laravel_docker
-DB_USERNAME=postgres
-DB_PASSWORD=secret
+MYSQL_ROOT_PASSWORD=password
+MYSQL_DATABASE=laravel-react
+MYSQL_USER=root
+MYSQL_PASSWORD=password
+MYSQL_PORT=3306
 ```
 
 ### Create a user

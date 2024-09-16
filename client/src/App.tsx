@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -6,17 +5,16 @@ import "./assets/styles/tailwind.css";
 import "./assets/styles/index.css";
 // layouts
 
-import { AuthContext } from "./auth/AuthContext";
 import Admin from "@/layouts/Admin";
-import Auth from "@/layouts/Auth";
+import Products from "./views/admin/Products";
 
 function App() {
-  const { isAuthenticated } = useContext(AuthContext);
 
   return (
     <Routes>
       {
-        <Route path="/" element={!isAuthenticated ? <Auth /> : <Admin />}>
+        <Route path="/" element={<Admin />}>
+          <Route path="/transactions" element={<Products />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       }

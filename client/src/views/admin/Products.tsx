@@ -1,5 +1,4 @@
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "@/auth/AuthContext";
+import { useEffect, useState } from "react";
 
 import { shallow } from "zustand/shallow";
 import { useProductsStore } from "@/store/useProductsStore";
@@ -8,7 +7,6 @@ import List from "./components/List";
 import { FormInterface } from "@/utils/interfaces";
 
 export default function Products() {
-  const { isAuthenticated } = useContext(AuthContext);
 
   const {
     getAllProducts,
@@ -55,7 +53,7 @@ export default function Products() {
 
   useEffect(() => {
     getAllProducts();
-  }, [isAuthenticated]);
+  }, []);
 
   return (
     <div className="container mx-auto px-20">
