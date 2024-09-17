@@ -1,8 +1,10 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import "./assets/styles/tailwind.css";
-import "./assets/styles/index.css";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import './assets/styles/toastify.css';
+import './assets/styles/tailwind.css';
+import './assets/styles/index.css';
+import 'react-toastify/dist/ReactToastify.css';
 // layouts
 
 import Admin from "@/layouts/Admin";

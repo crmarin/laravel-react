@@ -6,11 +6,17 @@ interface FormProps {
   setFormData: (form: FormInterface) => void;
 }
 
-export default function Form({ handleSubmit, formData, setFormData }: FormProps) {
+export default function Form({
+  handleSubmit,
+  formData,
+  setFormData,
+}: FormProps) {
   const { amount, type, description } = formData;
 
   // Type for the event should be React.ChangeEvent<HTMLInputElement>
-  const onChangeForm = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const onChangeForm = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -24,7 +30,7 @@ export default function Form({ handleSubmit, formData, setFormData }: FormProps)
   };
 
   return (
-    <div className="mx-20 mt-20 flex-auto px-4 py-10 pt-0 lg:px-2">
+    <div className="mx-20 mt-20 flex-auto px-4 pt-0 lg:px-2">
       <form onSubmit={onSubmit} autoComplete="off">
         <div className="flex flex-wrap">
           <div className="w-full px-4 lg:w-2/12">
@@ -52,10 +58,11 @@ export default function Form({ handleSubmit, formData, setFormData }: FormProps)
                 value={type}
                 onChange={onChangeForm}
               >
-                <option key={0} value="debit">
+                <option key={0} value=""></option>
+                <option key={1} value="debit">
                   debit
                 </option>
-                <option key={1} value="credit">
+                <option key={2} value="credit">
                   credit
                 </option>
               </select>
@@ -83,7 +90,7 @@ export default function Form({ handleSubmit, formData, setFormData }: FormProps)
           <button
             className="button-red"
             type="button"
-            onClick={() => setFormData({ name: "", detail: "" })}
+            onClick={() => setFormData({ id: 0, amount: 0, type: "", description: "" })}
           >
             Cancelar
           </button>

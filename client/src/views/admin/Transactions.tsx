@@ -24,10 +24,9 @@ export default function Transactions() {
     }),
     shallow
   );
-  console.log("🚀 ~ file: Transactions.tsx:18 ~ Transactions ~ transactions:", transactions)
 
   const initialState: FormInterface = {
-    id: null,
+    id: 0,
     amount: 0,
     type: "",
     description: "",

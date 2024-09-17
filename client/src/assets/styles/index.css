@@ -9,7 +9,7 @@
 /* ******** */
 
 .base-generic-input {
-  @apply w-full rounded border-0 bg-gray-100 px-3 py-3 text-sm text-gray-800 placeholder-gray-400 shadow transition-all duration-150 ease-linear focus:outline-none;
+  @apply w-full rounded border-0 bg-gray-100 px-1 py-1 sm:px-3 sm:py-3 text-sm text-gray-800 placeholder-gray-400 dark:placeholder-gray-500 shadow transition-all duration-150 ease-linear focus:outline-none;
 }
 
 .input-text-primary {
@@ -32,23 +32,27 @@
 /* basic color for edition */
 /* ******** */
 .base-edition-button {
-  @apply mx-1 rounded-2xl px-3 py-2 text-lg capitalize outline-none transition-all duration-150 ease-linear hover:text-2xl focus:outline-none;
+  @apply rounded-2xl px-2 py-2 text-[16px] capitalize outline-none transition-all duration-150 ease-linear hover:animate-pulse focus:outline-none;
 }
 
 .button-edit {
-  @apply base-edition-button text-blue-800;
+  @apply base-edition-button text-blue-800 dark:text-blue-500;
 }
 
 .button-show {
-  @apply base-edition-button text-indigo-800;
+  @apply base-edition-button text-indigo-800 dark:text-indigo-500;
 }
 
 .button-trash {
-  @apply base-edition-button text-rose-800;
+  @apply base-edition-button text-rose-800 dark:text-rose-500;
 }
 
 .button-green {
-  @apply base-edition-button text-green-800;
+  @apply base-edition-button text-green-800 dark:text-green-500;
+}
+
+.button-emerald {
+  @apply base-edition-button text-emerald-800 dark:text-emerald-500;
 }
 
 /* ******** */
@@ -63,7 +67,7 @@
   @apply base-generic-button bg-red-500 text-white hover:bg-red-700 active:bg-red-600;
 }
 
-.button-fucsia {
+.button-fuchsia {
   @apply base-generic-button bg-fuchsia-500 text-white hover:bg-fuchsia-700 active:bg-fuchsia-600;
 }
 
@@ -75,10 +79,48 @@
   @apply base-generic-button bg-blue-500 text-white hover:bg-blue-700 active:bg-blue-600;
 }
 
+.base-generic-paginator-button {
+  @apply mx-1 h-auto rounded-full px-3 py-2 text-[10px] normal-case shadow outline-none transition-all duration-150 ease-linear hover:shadow-md focus:outline-none;
+}
+
+.button-first {
+  @apply base-generic-paginator-button bg-indigo-500 text-white font-bold hover:bg-gray-400;
+}
+
+.button-prev {
+  @apply base-generic-paginator-button bg-blue-500 text-white font-bold hover:bg-gray-400;
+}
+
+.button-post {
+  @apply base-generic-paginator-button bg-blue-500 text-white font-bold hover:bg-gray-400;
+}
+
+.button-last {
+  @apply base-generic-paginator-button bg-indigo-500 text-white font-bold hover:bg-gray-400;
+}
+
+.toggle {
+  @apply relative block h-6 w-12 rounded-full p-1 before:absolute before:left-1 before:h-4 before:w-4 before:rounded-full before:bg-white before:p-1 before:transition-all before:duration-200 peer-checked:before:left-7 peer-checked:before:bg-white;
+}
+
 /* ******** */
 /* basic generic label */
 /* ******** */
 
 .label-text {
-  @apply mb-2 block text-xs text-gray-800;
+  @apply mb-1 sm:mb-2 block text-xs text-gray-800 dark:text-gray-200 w-max;
+}
+
+/* ******** */
+/* basic generic label */
+/* ******** */
+
+.continuos-selected {
+  --tw-ring-color: #2563eb;
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0
+    calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
 }

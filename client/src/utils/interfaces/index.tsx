@@ -1,5 +1,5 @@
 export interface FormInterface {
-  id?: number | null;
+  id: number;
   amount: number;
   type: string;
   description: string;

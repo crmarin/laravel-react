@@ -25,7 +25,7 @@ class TransactionController extends Controller
         $request->validate([
             'amount' => 'required|numeric',
             'description' => 'required|string|max:255',
-            'type' => 'required|in:income,expense,transfer'
+            'type' => 'required|in:credit,debit'
         ]);
 
         $transaction = Transaction::create($request->all());
@@ -52,7 +52,7 @@ class TransactionController extends Controller
         $request->validate([
             'amount' => 'numeric',
             'description' => 'string|max:255',
-            'type' => 'in:income,expense,transfer'
+            'type' => 'in:credit,debit'
         ]);
     
         $transaction = Transaction::findOrFail($id);
