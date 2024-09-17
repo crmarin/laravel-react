@@ -1,20 +1,41 @@
-FROM php:8.2-fpm-alpine
+# Use the official PHP image as the base image
+FROM php:8.2-fpm
 
-ADD ./www.conf /usr/local/etc/php-fpm.d/www.conf
+# Set the working directory
+WORKDIR /var/www/html
 
-RUN addgroup -g 1000 laravel && adduser -G laravel -g laravel -s /bin/sh -D laravel
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libpng-dev \
+    libjpeg62-turbo-dev \
+    libfreetype6-dev \
+    locales \
+    zip \
+    jpegoptim optipng pngquant gifsicle \
+    vim \
+    unzip \
+    git \
+    curl \
+    libonig-dev \
+    libxml2-dev \
+    libzip-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install gd pdo pdo_mysql mbstring zip exif pcntl bcmath xml
 
-RUN mkdir -p /var/www/html
+# Clear cache
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-ADD ./src/ /var/www/html
+# Install Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-#RUN chmod -R 777 /var/www/html/storage
-#RUN chmod -R 777 /var/www/html/bootstrap/cache
+# Copy existing application directory to the working directory
+COPY ./src/ /var/www/html
 
-RUN set -ex \
-    && apk --no-cache add \
-    postgresql-dev
+# Set permissions
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html
 
-RUN docker-php-ext-install pdo pdo_pgsql
-
-RUN chown -R laravel:laravel /var/www/html
+# Expose port 9000 and start php-fpm server
+EXPOSE 9000
+CMD ["php-fpm"]
