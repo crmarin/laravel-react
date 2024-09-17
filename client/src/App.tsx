@@ -6,7 +6,7 @@ import "./assets/styles/index.css";
 // layouts
 
 import Admin from "@/layouts/Admin";
-import Products from "./views/admin/Products";
+import Transactions from "./views/admin/Transactions";
 
 function App() {
 
@@ -14,7 +14,7 @@ function App() {
     <Routes>
       {
         <Route path="/" element={<Admin />}>
-          <Route path="/transactions" element={<Products />} />
+          <Route path="/transactions" element={<Transactions />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       }

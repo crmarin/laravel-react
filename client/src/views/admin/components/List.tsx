@@ -1,6 +1,6 @@
 import { FormInterface } from "@/utils/interfaces";
 
- export default function List({ products, handleDelete, handleEdit }) {
+ export default function List({ transactions, handleDelete, handleEdit }) {
    return (
      <div className="mx-20 mt-20 w-full px-4 lg:w-10/12">
        <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -11,15 +11,18 @@ import { FormInterface } from "@/utils/interfaces";
                  scope="col"
                  className="bg-gray-50 px-6 py-3 dark:bg-gray-800"
                >
-                 Product name
+                 Amount
                </th>
                <th scope="col" className="px-6 py-3">
-                 Detail
+                 Type
+               </th>
+               <th scope="col" className="px-6 py-3">
+                 Description
                </th>
              </tr>
            </thead>
            <tbody>
-             {products.map((product: FormInterface, index: number) => (
+             {transactions?.map((transaction: FormInterface, index: number) => (
                <tr
                  className="border-b border-gray-200 dark:border-gray-700"
                  key={index}
@@ -28,14 +31,15 @@ import { FormInterface } from "@/utils/interfaces";
                    scope="row"
                    className="whitespace-nowrap bg-gray-50 px-6 py-4 font-medium text-gray-900 dark:bg-gray-800 dark:text-white"
                  >
-                   {product.name}
+                   {transaction.amount}
                  </th>
-                 <td className="px-6 py-4"> {product.detail}</td>
+                 <td className="px-6 py-4"> {transaction.type}</td>
+                 <td className="px-6 py-4"> {transaction.description}</td>
                  <td>
                    <button
                      className="button-red"
                      type="button"
-                     onClick={() => handleDelete(product.id)}
+                     onClick={() => handleDelete(transaction.id)}
                    >
                      x
                    </button>
@@ -44,7 +48,7 @@ import { FormInterface } from "@/utils/interfaces";
                    <button
                      className="button-blue"
                      type="button"
-                     onClick={() => handleEdit(product.id)}
+                     onClick={() => handleEdit(transaction.id)}
                    >
                      Editar
                    </button>

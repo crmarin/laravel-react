@@ -1,5 +1,6 @@
 export interface FormInterface {
   id?: number | null;
-  name: string;
-  detail: string;
+  amount: number;
+  type: string;
+  description: string;
 }

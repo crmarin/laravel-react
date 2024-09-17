@@ -1,44 +1,76 @@
-export default function Form({ handleSubmit, formData, setFormData }) {
-  const { name, detail } = formData;
+import { FormInterface } from "@/utils/interfaces";
 
-  const onChangeForm = (e) => {
-    let { name, value } = e.target;
+interface FormProps {
+  handleSubmit?: (form: FormInterface) => void;
+  formData: FormInterface;
+  setFormData: (form: FormInterface) => void;
+}
+
+export default function Form({ handleSubmit, formData, setFormData }: FormProps) {
+  const { amount, type, description } = formData;
+
+  // Type for the event should be React.ChangeEvent<HTMLInputElement>
+  const onChangeForm = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const onSubmit = (e) => {
+  // onSubmit should prevent default and handle form submission
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    handleSubmit(formData);
+    if (handleSubmit) {
+      handleSubmit(formData);
+    }
   };
 
   return (
-    <div className="mt-20 mx-20 flex-auto px-4 py-10 pt-0 lg:px-2">
+    <div className="mx-20 mt-20 flex-auto px-4 py-10 pt-0 lg:px-2">
       <form onSubmit={onSubmit} autoComplete="off">
         <div className="flex flex-wrap">
-          <div className="w-full px-4 lg:w-6/12 xl:w-3/12">
+          <div className="w-full px-4 lg:w-2/12">
             <div className="relative mb-3 w-full">
-              <label className="label-text" htmlFor="grid-name">
-                Name
+              <label className="label-text" htmlFor="grid-amount">
+                Amount
               </label>
               <input
-                type="text"
+                type="number"
                 className="input-text-primary"
-                name="name"
-                value={name}
+                name="amount"
+                value={amount}
                 onChange={onChangeForm}
               />
             </div>
           </div>
-          <div className="w-full px-4 lg:w-6/12 xl:w-3/12">
+          <div className="w-full px-4 lg:w-5/12">
             <div className="relative mb-3 w-full">
-              <label className="label-text" htmlFor="grid-detail">
-                Detail
+              <label className="label-text" htmlFor="grid-type">
+                Tipo
+              </label>
+              <select
+                className="input-select-primary"
+                name="type"
+                value={type}
+                onChange={onChangeForm}
+              >
+                <option key={0} value="debit">
+                  debit
+                </option>
+                <option key={1} value="credit">
+                  credit
+                </option>
+              </select>
+            </div>
+          </div>
+          <div className="w-full px-4 lg:w-5/12">
+            <div className="relative mb-3 w-full">
+              <label className="label-text" htmlFor="grid-description">
+                Description
               </label>
               <input
                 type="text"
                 className="input-text-primary"
-                name="detail"
-                value={detail}
+                name="description"
+                value={description}
                 onChange={onChangeForm}
               />
             </div>
@@ -48,13 +80,14 @@ export default function Form({ handleSubmit, formData, setFormData }) {
         <hr className="border-b-1 mt-6 border-gray-300" />
 
         <div className="mb-6 mt-3 flex justify-center text-center">
-          <button className="button-red" type="button" onClick={() => setFormData({name: '', detail: ''})}>
+          <button
+            className="button-red"
+            type="button"
+            onClick={() => setFormData({ name: "", detail: "" })}
+          >
             Cancelar
           </button>
-          <button
-            className="button-blue"
-            type="submit"
-          >
+          <button className="button-blue" type="submit">
             Guardar
           </button>
         </div>

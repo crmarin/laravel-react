@@ -507,7 +507,7 @@
 			]
 		},
 		{
-			"name": "Products",
+			"name": "Transactions",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -528,20 +528,20 @@
 					}
 				],
 				"url": {
-					"raw": "{{server-laravel}}/api/products",
+					"raw": "{{server-laravel}}/api/transactions",
 					"host": [
 						"{{server-laravel}}"
 					],
 					"path": [
 						"api",
-						"products"
+						"transactions"
 					]
 				},
-				"description": "Get all products"
+				"description": "Get all transactions"
 			},
 			"response": [
 				{
-					"name": "Products",
+					"name": "Transactions",
 					"originalRequest": {
 						"method": "GET",
 						"header": [
@@ -552,7 +552,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://lvtest.avdemosites.com/api/products",
+							"raw": "https://lvtest.avdemosites.com/api/transactions",
 							"protocol": "https",
 							"host": [
 								"lvtest",
@@ -561,7 +561,7 @@
 							],
 							"path": [
 								"api",
-								"products"
+								"transactions"
 							]
 						}
 					},
@@ -640,7 +640,7 @@
 			]
 		},
 		{
-			"name": "Create Product",
+			"name": "Create Transaction",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -670,20 +670,20 @@
 					}
 				},
 				"url": {
-					"raw": "{{server-laravel}}/api/products",
+					"raw": "{{server-laravel}}/api/transactions",
 					"host": [
 						"{{server-laravel}}"
 					],
 					"path": [
 						"api",
-						"products"
+						"transactions"
 					]
 				},
-				"description": "Get all products"
+				"description": "Get all transactions"
 			},
 			"response": [
 				{
-					"name": "Create Product",
+					"name": "Create Transaction",
 					"originalRequest": {
 						"method": "POST",
 						"header": [
@@ -786,12 +786,12 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"success\": true,\n    \"message\": \"Product created successfully\",\n    \"data\": {\n        \"name\": \"Test-2\",\n        \"sku\": \"test-2\",\n        \"price\": 1000,\n        \"quantity\": 50,\n        \"user_id\": 2,\n        \"updated_at\": \"2020-09-21 12:28:18\",\n        \"created_at\": \"2020-09-21 12:28:18\",\n        \"id\": 2\n    }\n}"
+					"body": "{\n    \"success\": true,\n    \"message\": \"Transaction created successfully\",\n    \"data\": {\n        \"name\": \"Test-2\",\n        \"sku\": \"test-2\",\n        \"price\": 1000,\n        \"quantity\": 50,\n        \"user_id\": 2,\n        \"updated_at\": \"2020-09-21 12:28:18\",\n        \"created_at\": \"2020-09-21 12:28:18\",\n        \"id\": 2\n    }\n}"
 				}
 			]
 		},
 		{
-			"name": "Get Product",
+			"name": "Get Transaction",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -812,21 +812,21 @@
 					}
 				],
 				"url": {
-					"raw": "{{server-laravel}}/api/products/1",
+					"raw": "{{server-laravel}}/api/transactions/1",
 					"host": [
 						"{{server-laravel}}"
 					],
 					"path": [
 						"api",
-						"products",
+						"transactions",
 						"1"
 					]
 				},
-				"description": "Get all products"
+				"description": "Get all transactions"
 			},
 			"response": [
 				{
-					"name": "Get Product",
+					"name": "Get Transaction",
 					"originalRequest": {
 						"method": "GET",
 						"header": [
@@ -837,7 +837,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://lvtest.avdemosites.com/api/products/2",
+							"raw": "https://lvtest.avdemosites.com/api/transactions/2",
 							"protocol": "https",
 							"host": [
 								"lvtest",
@@ -846,7 +846,7 @@
 							],
 							"path": [
 								"api",
-								"products",
+								"transactions",
 								"2"
 							]
 						}
@@ -926,7 +926,7 @@
 			]
 		},
 		{
-			"name": "Update Product",
+			"name": "Update Transaction",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -956,21 +956,21 @@
 					}
 				},
 				"url": {
-					"raw": "{{server-laravel}}/api/products/2",
+					"raw": "{{server-laravel}}/api/transactions/2",
 					"host": [
 						"{{server-laravel}}"
 					],
 					"path": [
 						"api",
-						"products",
+						"transactions",
 						"2"
 					]
 				},
-				"description": "Get all products"
+				"description": "Get all transactions"
 			},
 			"response": [
 				{
-					"name": "Update Product",
+					"name": "Update Transaction",
 					"originalRequest": {
 						"method": "PUT",
 						"header": [
@@ -1074,12 +1074,12 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"success\": true,\n    \"message\": \"Product updated successfully\",\n    \"data\": true\n}"
+					"body": "{\n    \"success\": true,\n    \"message\": \"Transaction updated successfully\",\n    \"data\": true\n}"
 				}
 			]
 		},
 		{
-			"name": "Delete Product",
+			"name": "Delete Transaction",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -1100,20 +1100,20 @@
 					}
 				],
 				"url": {
-					"raw": "{{server-laravel}}/api/products/1",
+					"raw": "{{server-laravel}}/api/transactions/1",
 					"host": [
 						"{{server-laravel}}"
 					],
 					"path": [
 						"api",
-						"products",
+						"transactions",
 						"1"
 					]
 				}
 			},
 			"response": [
 				{
-					"name": "Delete Product",
+					"name": "Delete Transaction",
 					"originalRequest": {
 						"method": "DELETE",
 						"header": [
@@ -1208,7 +1208,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"success\": true,\n    \"message\": \"Product deleted successfully\"\n}"
+					"body": "{\n    \"success\": true,\n    \"message\": \"Transaction deleted successfully\"\n}"
 				}
 			]
 		}
