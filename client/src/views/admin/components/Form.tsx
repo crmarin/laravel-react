@@ -1,4 +1,5 @@
 import { FormInterface } from "@/utils/interfaces";
+import ErrorBell from '@/components/ErrorBell';
 
 interface FormProps {
   handleSubmit?: (form: FormInterface) => void;
@@ -82,6 +83,9 @@ export default function Form({
                 onChange={onChangeForm}
               />
             </div>
+          </div>
+          <div className="relative mb-3 w-full">
+            <ErrorBell />
           </div>
         </div>
 

@@ -62,7 +62,9 @@ class TransactionController extends Controller
 
             DB::commit();
 
-            return response()->json($transaction, 201);
+            return response()->json([
+                'message' => 'Transaction created ok!',
+            ], 200);
         } catch (\Illuminate\Validation\ValidationException $e) {
             return response()->json([
                 'message' => 'Validation error',
@@ -101,7 +103,9 @@ class TransactionController extends Controller
         $transaction = Transaction::findOrFail($id);
         $transaction->update($request->all());
 
-        return response()->json($transaction);
+        return response()->json([
+            'message' => 'Transaction updated ok!',
+        ], 200);
     }
 
     /**
@@ -112,7 +116,9 @@ class TransactionController extends Controller
         $transaction = Transaction::findOrFail($id);
         $transaction->delete();
 
-        return response()->json(null, 204);
+        return response()->json([
+            'message' => 'Transaction delete ok!',
+        ], 200);
     }
     
     public function loadCSV(Request $request)
