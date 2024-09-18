@@ -52,13 +52,13 @@ DELIMITER //
 
 CREATE PROCEDURE LoadCSVToTransactions(IN csv_file_path VARCHAR(255))
 BEGIN
-    -- Cargar datos desde el archivo CSV al sistema
+
 LOAD DATA INFILE '/var/lib/mysql-files/transactions.csv'
     INTO
 	TABLE transactions
     FIELDS TERMINATED BY ','
 	ENCLOSED BY '"' 
-    LINES TERMINATED BY '\n'
+    LINES TERMINATED BY '\r\n'
     (transactionID,
 	amount,
 	`type`,
@@ -73,12 +73,9 @@ LOAD DATA INFILE '/var/lib/mysql-files/transactions.csv'
 	@created_at,
 	@updated_at)
 SET
-	creationDate = STR_TO_DATE(REPLACE(@creationDate, '"', ''),
-	'%Y-%m-%d'),
-	created_at = STR_TO_DATE(REPLACE(@created_at, '"', ''),
-	'%Y-%m-%d'),
-	updated_at = STR_TO_DATE(REPLACE(@updated_at, '"', ''),
-	'%Y-%m-%d');
+	creationDate = str_to_date(@creationDate,'%Y-%m-%d'),
+	created_at = str_to_date(@created_at,'%Y-%m-%d %H:%i:%s'),
+	updated_at = str_to_date(@updated_at,'%Y-%m-%d %H:%i:%s');
     
 END //
 

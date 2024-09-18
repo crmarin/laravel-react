@@ -1,5 +1,4 @@
 The best option to load bulk data is using a store procedure,
-but in this case failed for a date formats
 
 could you watch file in
 ````
@@ -12,16 +11,17 @@ pros:
 cons:
     knowlage for creating a procedure
     needs same length fields to insert in table
-
+	unique ids, you need truncate the table or erase id from csv data and procedure
 ````
-SET GLOBAL sql_mode = '';
+
+TRUNCATE TABLE `laravel-react`.transactions;
 
 LOAD DATA INFILE '/var/lib/mysql-files/transactions.csv'
     INTO
 	TABLE transactions
     FIELDS TERMINATED BY ','
 	ENCLOSED BY '"' 
-    LINES TERMINATED BY '\n'
+    LINES TERMINATED BY '\r\n'
     (transactionID,
 	amount,
 	`type`,
@@ -36,10 +36,19 @@ LOAD DATA INFILE '/var/lib/mysql-files/transactions.csv'
 	@created_at,
 	@updated_at)
 SET
-	creationDate = STR_TO_DATE(REPLACE(@creationDate, '"', ''),
-	'%Y-%m-%d'),
-	created_at = STR_TO_DATE(REPLACE(@created_at, '"', ''),
-	'%Y-%m-%d'),
-	updated_at = STR_TO_DATE(REPLACE(@updated_at, '"', ''),
-	'%Y-%m-%d');
+	creationDate = str_to_date(@creationDate,'%Y-%m-%d'),
+	created_at = str_to_date(@created_at,'%Y-%m-%d %H:%i:%s'),
+	updated_at = str_to_date(@updated_at,'%Y-%m-%d %H:%i:%s');
+`````
+
+results: the insertion took 5s for 200.000 rows
+
+`````
+Queries	1
+Updated Rows	200000
+Execute time (ms)	5196
+Fetch time (ms)	0
+Total time (ms)	5196
+Start time	2024-09-18 08:18:37.168
+Finish time	2024-09-18 08:18:42.365
 `````
