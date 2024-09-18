@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('traceNumber')->unique(); // Unique alphanumeric value
             $table->string('reference')->nullable();
             $table->string('description');            
-            $table->dateTime('creationDate');
+            $table->date('creationDate');
             $table->timestamps(); // Adds created_at and updated_at columns
         });
     }

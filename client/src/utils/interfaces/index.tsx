@@ -3,4 +3,5 @@ export interface FormInterface {
   amount: string;
   type: string;
   description: string;
+  creationDate: string;
 }

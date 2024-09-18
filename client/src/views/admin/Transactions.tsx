@@ -26,8 +26,8 @@ export default function Transactions() {
   );
 
   const initialState: FormInterface = {
-    id: 0,
-    amount: 0,
+    transactionID: 0,
+    amount: '',
     type: "",
     description: "",
   };
@@ -35,8 +35,8 @@ export default function Transactions() {
   const [formData, setFormData] = useState(initialState);
 
   const onSubmit = (formData: FormInterface) => {
-    if (formData.id) {
-      updateTransaction(formData, formData.id);
+    if (formData.transactionID) {
+      updateTransaction(formData, formData.transactionID);
     } else {
       registerTransaction(formData);
     }
@@ -48,23 +48,23 @@ export default function Transactions() {
   };
 
   const onEditTransaction = (id: number) => {
-    const transaction: Array<FormInterface> = transactions?.filter((p:FormInterface, i:number) => p.id === id);
+    const transaction: Array<FormInterface> = transactions?.data?.filter((p:FormInterface, i:number) => p.transactionID === id);
     setFormData({ ...formData, ...transaction[0] });
   };
 
   useEffect(() => {
-    getAllTransactions();
+    getAllTransactions(1, null);
   }, []);
 
   return (
-    <div className="container mx-auto px-20">
+    <div className="container mx-auto lg:px-20">
       <Form
         handleSubmit={onSubmit}
         formData={formData}
         setFormData={setFormData}
       />
 
-      <List transactions={transactions} handleDelete={onDeleteTransaction} handleEdit={onEditTransaction} />
+      <List handleDelete={onDeleteTransaction} handleEdit={onEditTransaction} />
     </div>
   );
 }

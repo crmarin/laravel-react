@@ -4,13 +4,16 @@ import api from "../utils/api";
 
 let store = (set, get) => ({
   transactions: [],
-  getAllTransactions: async () => {
+  getAllTransactions: async (page, filters) => {
     try {
-      api.defaults.headers.Authorization =
-        "Bearer " + localStorage.getItem("token");
-      const { data } = await api.get("transactions");
+      const queryParams = new URLSearchParams({
+        page,
+        ...filters, // Añadimos los filtros como query string
+      }).toString();
+
+      const { data } = await api.get(`transactions?${queryParams}`);
       set({ transactions: data }, false, { type: "createTransaction" });
-    } catch (err) {
+    } catch (error) {
       set({ error: err.response }, false, {
         type: "createTransaction-fail",
       });

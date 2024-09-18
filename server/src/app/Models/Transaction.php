@@ -19,6 +19,8 @@ class Transaction extends Model
         'accountNumberTypeTo',
         'traceNumber',
         'amount',
+        'type',
+        'description',
         'creationDate',
         'reference',
     ];

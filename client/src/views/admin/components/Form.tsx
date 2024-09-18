@@ -30,7 +30,8 @@ export default function Form({
   };
 
   return (
-    <div className="mx-20 mt-20 flex-auto px-4 pt-0 lg:px-2">
+    <div className="lg:mx-20 mt-20 flex-auto px-4 pt-0 lg:px-2">
+      <p className="text-lg text-gray-700">Transaction form</p>
       <form onSubmit={onSubmit} autoComplete="off">
         <div className="flex flex-wrap">
           <div className="w-full px-4 lg:w-2/12">
