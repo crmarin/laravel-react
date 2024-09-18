@@ -12,11 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('transactions', function (Blueprint $table) {
-            $table->id();
-            $table->string('amount');
+            $table->id('transactionID');
+            $table->decimal('amount', 10, 2);
             $table->enum('type', ['credit', 'debit']);
-            $table->string('description');
-            $table->timestamps();
+            $table->string('accountNumberFrom');
+            $table->string('accountNumberTypeFrom');
+            $table->string('accountNumberTo');
+            $table->string('accountNumberTypeTo');
+            $table->string('traceNumber')->unique(); // Unique alphanumeric value
+            $table->string('reference')->nullable();
+            $table->string('description');            
+            $table->dateTime('creationDate');
+            $table->timestamps(); // Adds created_at and updated_at columns
         });
     }
 

@@ -1,6 +1,6 @@
 export interface FormInterface {
-  id: number;
-  amount: number;
+  transactionID: number;
+  amount: string;
   type: string;
   description: string;
 }

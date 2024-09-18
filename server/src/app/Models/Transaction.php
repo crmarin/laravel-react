@@ -9,5 +9,30 @@ class Transaction extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['amount', 'type', 'description'];
+    protected $table = 'transactions';
+
+    // Fields that can be mass-assigned
+    protected $fillable = [
+        'accountNumberFrom',
+        'accountNumberTypeFrom',
+        'accountNumberTo',
+        'accountNumberTypeTo',
+        'traceNumber',
+        'amount',
+        'creationDate',
+        'reference',
+    ];
+
+    // Optionally, you can set a primary key if it's not 'id'
+    protected $primaryKey = 'transactionID';
+    
+    // Automatically generate a unique trace number when creating a transaction
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($transaction) {
+            $transaction->traceNumber = bin2hex(random_bytes(10)); // Generates a unique alphanumeric trace number
+        });
+    }
 }

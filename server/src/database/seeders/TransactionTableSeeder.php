@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Transaction;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class TransactionTableSeeder extends Seeder
 {
@@ -20,9 +21,16 @@ class TransactionTableSeeder extends Seeder
         // And now, let's create a few articles in our database:
         for ($i = 0; $i < 500; $i++) {
             Transaction::create([
-                'amount' => $faker->randomFloat(0, 1, 1000),
+                'amount' => $faker->randomFloat(2, 10, 1000), // Monto entre 10 y 1000 con 2 decimales
                 'type' => $faker->randomElement(['debit', 'credit']),
+                'accountNumberFrom' => $faker->bankAccountNumber,
+                'accountNumberTypeFrom' => $faker->randomElement(['Checking', 'Savings']),
+                'accountNumberTo' => $faker->bankAccountNumber,
+                'accountNumberTypeTo' => $faker->randomElement(['Checking', 'Savings']),
+                'traceNumber' => Str::random(20), // Generar un valor alfanumérico único
+                'reference' => $faker->sentence(3),
                 'description' => $faker->sentence(4),
+                'creationDate' => $faker->dateTimeThisYear(),
             ]);
         }
     }

@@ -1,13 +1,5 @@
 import { FormInterface } from "@/utils/interfaces";
-import Transactions from "@/views/admin/Transactions";
 import React, { useEffect, useState } from "react";
-
-interface Data {
-  id: number;
-  amount: number;
-  type: string;
-  description: string;
-}
 
 interface Props {
   initialData: FormInterface[];
@@ -21,7 +13,7 @@ export default function DataTable({
   handleEdit,
 }: Props) {
   const [data, setData] = useState(initialData); 
-  const [sortKey, setSortKey] = useState<keyof Data>("amount");
+  const [sortKey, setSortKey] = useState<keyof FormInterface>("amount");
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -42,7 +34,7 @@ export default function DataTable({
 
   const filteredData = data.filter(
     (row) =>
-      row.id.toString().includes(searchTerm.toLowerCase()) ||
+      row.transactionID.toString().includes(searchTerm.toLowerCase()) ||
       row.amount.toString().includes(searchTerm.toLowerCase()) ||
       row.type.toLowerCase().includes(searchTerm.toLowerCase()) ||
       row.description.toLowerCase().includes(searchTerm.toLowerCase())
@@ -92,8 +84,8 @@ export default function DataTable({
       <table className="w-full text-left text-sm text-gray-500 rtl:text-right dark:text-gray-400">
         <thead className="text-xs uppercase text-gray-700 dark:text-gray-400">
           <tr>
-            <th onClick={() => sortData("id")}>
-              ID {sortKey === "id" && (sortOrder === "asc" ? "↑" : "↓")}
+            <th onClick={() => sortData("transactionID")}>
+              ID {sortKey === "transactionID" && (sortOrder === "asc" ? "↑" : "↓")}
             </th>
             <th onClick={() => sortData("amount")}>
               Amount {sortKey === "amount" && (sortOrder === "asc" ? "↑" : "↓")}
@@ -118,7 +110,7 @@ export default function DataTable({
                   scope="row"
                   className="px-6 py-4"
                 >
-                  {transaction.id}
+                  {transaction.transactionID}
                 </th>
                 <th
                   scope="row"
@@ -132,7 +124,7 @@ export default function DataTable({
                   <button
                     className="button-red"
                     type="button"
-                    onClick={() => handleDelete(transaction?.id)}
+                    onClick={() => handleDelete(transaction?.transactionID)}
                   >
                     Delete
                   </button>
@@ -141,7 +133,7 @@ export default function DataTable({
                   <button
                     className="button-blue"
                     type="button"
-                    onClick={() => handleEdit(transaction?.id)}
+                    onClick={() => handleEdit(transaction?.transactionID)}
                   >
                     Edit
                   </button>
