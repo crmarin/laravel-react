@@ -6,7 +6,7 @@
 docker compose up
 ```
 
-### Credentialas
+### Credentials
 
 ```
 MYSQL_ROOT_PASSWORD=password
