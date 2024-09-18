@@ -15,7 +15,6 @@ class TransactionController extends Controller
      */
     public function index(Request $request)
     {
-        //
         $query = Transaction::query();
         if ($request->has('amount')) {
             $query->where('amount', $request->input('amount'));
@@ -39,12 +38,9 @@ class TransactionController extends Controller
     {
         try {
 
-
-            // Iniciar transacción de la base de datos
             DB::beginTransaction();
 
             $faker = \Faker\Factory::create();
-            //
             $request->validate([
                 'amount' => 'required|numeric',
                 'description' => 'required|string|max:255',
@@ -56,10 +52,10 @@ class TransactionController extends Controller
                 'accountNumberTypeFrom' => $faker->randomElement(['Checking', 'Savings']),
                 'accountNumberTo' => $faker->bankAccountNumber,
                 'accountNumberTypeTo' => $faker->randomElement(['Checking', 'Savings']),
-                'traceNumber' => Str::random(20), // Generar un valor alfanumérico único
+                'traceNumber' => Str::random(20),
                 'reference' => $faker->sentence(3),
-                'description' => $request->input('description', $faker->sentence(4)), // Permitir descripción del request o usar Faker
-                'creationDate' => now(), // Usar la fecha actual
+                'description' => $request->input('description', $faker->sentence(4)),
+                'creationDate' => now(),
             ]);
 
             $transaction = Transaction::create($transactionData);
@@ -68,16 +64,13 @@ class TransactionController extends Controller
 
             return response()->json($transaction, 201);
         } catch (\Illuminate\Validation\ValidationException $e) {
-            // Capturar errores de validación
             return response()->json([
                 'message' => 'Validation error',
                 'errors' => $e->errors()
             ], 422);
         } catch (\Exception $e) {
-            // Revertir cambios si ocurre algún error
             DB::rollBack();
 
-            // Capturar cualquier otro error
             return response()->json([
                 'message' => 'An error occurred while creating the transaction',
                 'error' => $e->getMessage()
@@ -90,7 +83,6 @@ class TransactionController extends Controller
      */
     public function show(string $id)
     {
-        //
         $transaction = Transaction::findOrFail($id);
         return response()->json($transaction);
     }
@@ -100,7 +92,6 @@ class TransactionController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
         $request->validate([
             'amount' => 'numeric',
             'description' => 'string|max:255',
@@ -118,10 +109,29 @@ class TransactionController extends Controller
      */
     public function destroy(string $id)
     {
-        //
         $transaction = Transaction::findOrFail($id);
         $transaction->delete();
 
         return response()->json(null, 204);
     }
+    
+    public function loadCSV(Request $request)
+    {
+        try {
+            $csvFullPath = storage_path('transactions.csv');
+
+            DB::statement('CALL LoadCSVToTransactions(?)', [$csvFullPath]);
+
+            return response()->json([
+                'message' => 'CSV file loaded successfully into transactions table.'
+            ], 200);
+
+        } catch (\Exception $e) {
+            return response()->json([
+                'message' => 'Error loading CSV file.',
+                'error' => $e->getMessage()
+            ], 500);
+        }
+    }
 }
+

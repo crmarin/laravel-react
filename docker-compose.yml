@@ -11,6 +11,8 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_PORT: ${MYSQL_PORT}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}  
+    volumes:
+      - ./server/src/storage:/var/lib/mysql-files
     networks:
       - laravel
 
